@@ -1,3 +1,8 @@
+//John Speer
+//10/5/25
+//Object to keep track of a store and its inventory, which can be changed, or, shown the author's name of an item.
+import java.util.ArrayList;
+
 /*Implement the following functionality into the store:
 
   instance variables: 
@@ -23,5 +28,40 @@
 */
 public class Store
 {
+  double profit;
+  ArrayList<ItemForSale> items=new ArrayList<>();
+  public Store(){
+    profit=0;
+  }
+  public void showItems(){
+    for(int i=0;i<items.size();i++){
+      System.out.println(items.get(i).getTitle());
+    }
+  }
+  public void addItem(ItemForSale item){
+    items.add(item);
+    for(int i=0;i<items.size();i++){
+      if(items.get(i).getTitle().compareTo(item.getTitle())>0){
+        items.remove(item);
+        items.add(i,item);
 
+      }
+    }
+  }
+  public void sellItem(String item){
+    for(int i=0;i<items.size();i++){
+      if(items.get(i).getCreator().getName().equals(item)){
+        double temp=items.get(i).getPrice();
+        items.remove(i);
+        profit+=temp;
+      }
+    }
+  }
+  public void creator(String item){
+    for(int i=0;i<items.size();i++){
+      if(items.get(i).getTitle().equals(item)){
+        System.out.println(items.get(i).getCreator().getName());
+      }
+    }
+  }
 }
