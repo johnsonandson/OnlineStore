@@ -33,11 +33,15 @@ public class Store
   public Store(){
     profit=0;
   }
+  //pre condition:items has been initialized
+  //post condition: prints out all of the items in list items
   public void showItems(){
     for(int i=0;i<items.size();i++){
       System.out.println(items.get(i).getTitle());
     }
   }
+  //pre condition: item and items are initialized
+  //post condition: adds item to list items 
   public void addItem(ItemForSale item){
     items.add(item);
     for(int i=0;i<items.size();i++){
@@ -48,6 +52,8 @@ public class Store
       }
     }
   }
+  //pre condition: item is the title of an object in items
+  //post condition: object with title item is removed from items, and the object's price is added to the store's total profit
   public void sellItem(String item){
     for(int i=0;i<items.size();i++){
       if(items.get(i).getCreator().getName().equals(item)){
@@ -57,6 +63,8 @@ public class Store
       }
     }
   }
+  //pre condition: item is the title of an object in items
+  //post condition: prints the object's author's name
   public void creator(String item){
     for(int i=0;i<items.size();i++){
       if(items.get(i).getTitle().equals(item)){

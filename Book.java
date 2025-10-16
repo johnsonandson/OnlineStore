@@ -30,6 +30,8 @@ public class Book extends ItemForSale
     public String getDOB(){
         return creator.getDOB();
     }
+    //precondition: dor has been set and this item has been initialized
+    //postcondition: return dor
     public String getDOR(){
         return dor;
     }

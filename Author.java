@@ -9,9 +9,13 @@ public class Author
         this.name=name;
         this.dob=dob;
     }
+    //pre condition: dob has been set and this item have been initialized
+    //post condition: return dob
     public String getDOB(){
         return this.dob;
     }
+    //pre condition: name has been set and this item has been initialized
+    //post condition:
     public String getName(){
         return this.name;
     }

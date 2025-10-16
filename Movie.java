@@ -31,6 +31,8 @@ public class Movie extends ItemForSale
     public String getDOR(){
         return dor;
     }
+    //pre condition: duration has been set and this item has been initialized
+    //post condition: return duration
     public double getDur(){
         return duration;
     }
